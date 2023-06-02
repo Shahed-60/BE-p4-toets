@@ -12,7 +12,6 @@ class Examinatorn extends BaseController
 
         $instructeurs = $this->examinatornModel->getexaminatorn();
 
-        // var_dump($instructeurs);
         $aantalExaminatorn = sizeof($examinatorn);
 
         $tableRows = '';
