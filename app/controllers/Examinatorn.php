@@ -38,9 +38,7 @@ class Examinatorn extends BaseController
                             </tr>";
         }
 
-        /**
-         * Het $data-array geeft alle belangrijke info door aan de view
-         */
+
         $data = [
             'title' => 'Overzicht Afgenomen Examnes Examinatoren',
             'tableRows' => $tableRows
