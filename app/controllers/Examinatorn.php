@@ -45,7 +45,6 @@ class Examinatorn extends BaseController
 
     public function examinatorn($examinatornId)
     {
-        // Ophalen van de gegevens over de instructeur met een apart query
         $examinatorn =   $this->ExaminatornModel->getExaminatornInfoById($examinatornId);
         // var_dump($instructeur);
         // Ophalen toegewezenb voertuigen van geselecteerde instructeur
