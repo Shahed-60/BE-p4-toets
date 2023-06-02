@@ -29,7 +29,7 @@ DROP TABLE IF EXISTS Examen;
 CREATE TABLE IF NOT EXISTS Examen
 (
     Id              TINYINT         UNSIGNED        NOT NULL    AUTO_INCREMENT
-   ,StudentId        INT(6)                         NOT NULL
+   ,StudentId        INT                         NOT NULL
    ,Rijschool       VARCHAR(50)                     NOT NULL
    ,Stad            VARCHAR(50)                     NOT NULL
    ,Rijbewijscategorie VARCHAR(5)                   NOT NULL
@@ -148,8 +148,8 @@ DROP TABLE IF EXISTS ExamenPerExaminator;
 CREATE TABLE IF NOT EXISTS ExamenPerExaminator
 (
     Id                      TINYINT         UNSIGNED        NOT NULL    AUTO_INCREMENT
-   ,ExamenId                TINYINT                         NOT NULL
-   ,ExaminatorId            TINYINT                         NOT NULL
+   ,ExamenId                TINYINT          UNSIGNED               NOT NULL
+   ,ExaminatorId            TINYINT             UNSIGNED            NOT NULL
    ,IsActief                BIT                             NOT NULL    DEFAULT 1
    ,Opmerkingen             VARCHAR(250)                        NULL    DEFAULT NULL
    ,DatumAangemaakt         DateTime(6)                     NOT NULL
