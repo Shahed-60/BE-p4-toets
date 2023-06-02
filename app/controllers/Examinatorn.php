@@ -9,9 +9,7 @@ class Examinatorn extends BaseController
     }
     public function index()
     {
-        /**
-         * Haal alle examinatorn op uit de database (model)
-         */
+
         $instructeurs = $this->examinatornModel->getexaminatorn();
 
         // var_dump($instructeurs);
