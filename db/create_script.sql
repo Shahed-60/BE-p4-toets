@@ -78,7 +78,6 @@ VALUES
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 -- Step: 06
 -- Goal: Create a new table Examinator
@@ -135,3 +134,56 @@ VALUES
 ('Naswha', '', 'Salawi', '06-34291219', 1, NULL, SYSDATE(6), SYSDATE(6));
 
 -- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- Step: 04
+-- Goal: Create a new table ExamenPerExaminator
+-- **********************************************************************************
+-- Version       Date:           Author:                     Description:
+-- *******       **********      ****************            ******************
+-- 01            14-04-2023      Shahed Amer                    New
+-- **********************************************************************************/
+
+-- Drop table ExamenPerExaminator
+DROP TABLE IF EXISTS ExamenPerExaminator;
+
+CREATE TABLE IF NOT EXISTS ExamenPerExaminator
+(
+    Id                      TINYINT         UNSIGNED        NOT NULL    AUTO_INCREMENT
+   ,ExamenId                TINYINT                         NOT NULL
+   ,ExaminatorId            TINYINT                         NOT NULL
+   ,IsActief                BIT                             NOT NULL    DEFAULT 1
+   ,Opmerkingen             VARCHAR(250)                        NULL    DEFAULT NULL
+   ,DatumAangemaakt         DateTime(6)                     NOT NULL
+   ,DatumGewijzigd          DateTime(6)                     NOT NULL
+
+   ,CONSTRAINT      PK_ExamenPerExaminator_Id   PRIMARY KEY CLUSTERED(Id)
+   ,CONSTRAINT      FK_ExamenPerExaminator_ExamenId_Examen_Id FOREIGN KEY (ExamenId) REFERENCES Examen(Id)
+   ,CONSTRAINT      FK_ExamenPerExaminator_ExaminatorId_Examinator_Id FOREIGN KEY (ExaminatorId) REFERENCES Examinator(Id)
+
+) ENGINE=InnoDB;
+
+-- Step: 05
+-- Goal: Fill table ExamenPerExaminator with data
+-- **********************************************************************************
+-- Version       Date:           Author:                     Description:
+-- *******       **********      ****************            ******************
+-- 01            14-04-2023      Shahed Amer                    New
+-- **********************************************************************************
+
+INSERT INTO ExamenPerExaminator
+(
+    ExamenId
+    ,ExaminatorId 
+    ,IsActief
+    ,Opmerkingen
+    ,DatumAangemaakt
+    ,DatumGewijzigd
+)
+VALUES
+     ('1', '3', 1, NULL, SYSDATE(6), SYSDATE(6))
+    ,('3', '3', 1, NULL, SYSDATE(6), SYSDATE(6))
+    ,('2', '2', 1, NULL, SYSDATE(6), SYSDATE(6))
+    ,('4', '1', 1, NULL, SYSDATE(6), SYSDATE(6))
+    ,('7', '3', 1, NULL, SYSDATE(6), SYSDATE(6))
+    ,('6', '2', 1, NULL, SYSDATE(6), SYSDATE(6))
+    ,('5', '4', 1, NULL, SYSDATE(6), SYSDATE(6));
+
