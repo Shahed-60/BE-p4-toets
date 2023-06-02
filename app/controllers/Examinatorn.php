@@ -15,9 +15,6 @@ class Examinatorn extends BaseController
         // var_dump($instructeurs);
         $aantalExaminatorn = sizeof($examinatorn);
 
-        /**
-         * Maak de rows voor de tbody in de view
-         */
         $tableRows = '';
 
         foreach ($examinatorn as $examinator) {
