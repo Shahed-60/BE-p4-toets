@@ -13,16 +13,14 @@
 <body>
     <u> <?= $data['title']; ?></u>
 
-    <h4>Aantal Instructeurs: <?= $data['aantalInstructeurs']; ?></h4>
     <table>
         <thead>
-            <th>Voornaam</th>
-            <th>Tussenvoegsel</th>
-            <th>Achternaam</th>
-            <th>Mobiel</th>
-            <th>Datum in dienst</th>
-            <th>Aantal sterren</th>
-            <th>Voertuigen</th>
+            <th>Naam</th>
+            <th>Datum Examen</th>
+            <th>Rijbewijscategorie</th>
+            <th>Rijschool</th>
+            <th>Stad</th>
+            <th>Uitslag examen</th>
         </thead>
         <tbody>
             <?= $data['tableRows']; ?>
